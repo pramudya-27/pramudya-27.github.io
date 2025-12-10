@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kontak Kami</title>
+    <style>
+      @keyframes fadeInSlide {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      body {
+        animation: fadeInSlide 0.8s ease-out forwards;
+        font-family: "Times New Roman", Times, serif;
+        background-color: #fff3e0;
+        margin: 0;
+        padding: 20px;
+      }
+
+      .nav-btn {
+        background-color: white;
+        border: 3px solid #333;
+        padding: 10px 20px;
+        text-decoration: none;
+        color: #d35400;
+        font-weight: bold;
+        display: inline-block;
+        margin-bottom: 20px;
+        position: relative;
+        z-index: 20;
+      }
+
+      .top-nav {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: -50px;
+        position: relative;
+        z-index: 10;
+      }
+
+      .next-btn {
+        background-color: white;
+        border: 3px solid #333;
+        padding: 10px 20px;
+        text-decoration: none;
+        color: #d35400;
+        font-weight: bold;
+        box-shadow: 3px 3px 0px #333;
+      }
+
+      .container {
+        background: white;
+        padding: 30px;
+        border: 3px solid #ff9800;
+        box-shadow: 6px 6px 0px #ff9800;
+        width: 100%;
+        max-width: 400px;
+        margin: 50px auto 0 auto;
+      }
+
+      h1 {
+        color: #e65100;
+        margin-top: 0;
+      }
+      label {
+        display: block;
+        margin-top: 10px;
+        color: #333;
+        font-weight: bold;
+      }
+      input,
+      textarea {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+        border: 2px solid #ffe0b2;
+        box-sizing: border-box;
+      }
+      input:focus,
+      textarea:focus {
+        border-color: #ff9800;
+        outline: none;
+      }
+      button {
+        background-color: #ff9800;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        margin-top: 20px;
+        cursor: pointer;
+        font-weight: bold;
+        width: 100%;
+        font-size: 16px;
+      }
+      button:hover {
+        background-color: #e65100;
+      }
+      .back-link {
+        display: block;
+        margin-bottom: 20px;
+        color: #e65100;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="top-nav">
+      <a href="index.html" class="next-btn">Back to Home</a>
+    </div>
+
+    <a href="table_page.html" class="nav-btn">Previous Page</a>
+
+    <div class="container">
+      <h1>Hubungi Saya</h1>
+      <form id="contactForm">
+        <label>Nama:</label>
+        <input type="text" id="nama" name="nama" placeholder="Nama Lengkap" />
+
+        <label>Email:</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="email@contoh.com"
+        />
+
+        <label>Pesan:</label>
+        <textarea
+          id="pesan"
+          name="pesan"
+          rows="4"
+          placeholder="Tulis pesan Anda disini..."
+        ></textarea>
+
+        <button type="submit">Kirim Pesan</button>
+      </form>
+    </div>
+
+    <script>
+      // mengambil elemen form berdasarkan ID
+      const form = document.getElementById("contactForm");
+
+      // menambahkan Event Listener untuk saat tombol diklik (submit)
+      form.addEventListener("submit", function (event) {
+        // Mencegah halaman refresh (behavior default HTML)
+        event.preventDefault();
+
+        // mengambil nilai dari inputan
+        const nama = document.getElementById("nama").value;
+        const email = document.getElementById("email").value;
+        const pesan = document.getElementById("pesan").value;
+
+        // untuk validasi Sederhana: Cek jika ada yang kosong
+        if (nama === "" || email === "" || pesan === "") {
+          alert("Mohon lengkapi semua kolom (Nama, Email, dan Pesan)!");
+          return; // Berhenti di sini, jangan lanjut ke bawah
+        }
+
+        // menampilkan Pesan Sukses (Alert)
+        alert(
+          "Halo, " +
+            nama +
+            "!\n" +
+            "Terima kasih sudah menghubungi saya.\n" +
+            "Pesan Anda telah terkirim dan saya akan membalas ke email: " +
+            email
+        );
+
+        // reset Form (Kosongkan inputan kembali)
+        form.reset();
+      });
+    </script>
+  </body>
+</html>

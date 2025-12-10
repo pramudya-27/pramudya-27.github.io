@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Halaman Profil - Tema Orange</title>
+    <style>
+      @keyframes fadeInSlide {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      body {
+        background-color: #ff8c00;
+        animation: fadeInSlide 0.8s ease-out forwards;
+        font-family: "Times New Roman", Times, serif;
+        margin: 0;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .top-nav {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: -50px;
+        position: relative;
+        z-index: 10;
+      }
+      .next-btn {
+        background-color: white;
+        border: 3px solid #333;
+        padding: 10px 20px;
+        text-decoration: none;
+        color: #d35400;
+        font-weight: bold;
+        box-shadow: 3px 3px 0px #333;
+      }
+      .profile-container {
+        width: 150px;
+        height: 150px;
+        background-color: white;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 4px solid #333;
+        z-index: 2;
+        margin-bottom: -75px;
+        /* Tambahkan transisi agar ada efek saat di-hover */
+        transition: transform 0.3s;
+        cursor: pointer;
+      }
+
+      /* Efek zoom sedikit saat mouse diarahkan ke foto */
+      .profile-container:hover {
+        transform: scale(1.05);
+      }
+
+      .profile-container a {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+
+      .profile-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .content-box {
+        background-color: white;
+        border: 3px solid #333;
+        width: 80%;
+        max-width: 700px;
+        padding: 90px 40px 40px 40px;
+        text-align: left;
+        box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.2);
+      }
+      .nav-link {
+        color: #d35400;
+        font-weight: bold;
+        text-decoration: none;
+      }
+      ul,
+      ol {
+        margin-top: 5px;
+        margin-bottom: 15px;
+      }
+      li {
+        margin-bottom: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="top-nav">
+      <a href="halaman2-Article.html" class="next-btn">Next Page</a>
+    </div>
+
+    <div class="profile-container" title="Klik untuk melihat Asset Gambar">
+      <img src="asset/img/profile.jpg" alt="Foto Profil" />
+    </div>
+
+    <div class="content-box">
+      <h3>Halo!</h3>
+      <p>
+        Namaku Dio Pramudya, aku seorang mahasiswa teknik informatika yang suka
+        banget ngulik hal-hal baru di dunia teknologi.
+      </p>
+
+      <p><strong>Hobi-ku antara lain:</strong></p>
+      <ul>
+        <li>Olahraga</li>
+        <li>Baca Buku</li>
+        <li>Main Game</li>
+      </ul>
+
+      <p><strong>Prioritas Belajarku Saat Ini:</strong></p>
+      <ol>
+        <li>Menguasai HTML & CSS</li>
+        <li>Belajar JavaScript</li>
+        <li>Memahami Backend dengan PHP/Node.js</li>
+      </ol>
+
+      <p>
+        <i
+          >Fun fact: aku bisa serius dalam belajar dan diskusi, tetapi di
+          barengi bercanda agar tidak canggung.</i
+        >
+      </p>
+    </div>
+  </body>
+</html>
